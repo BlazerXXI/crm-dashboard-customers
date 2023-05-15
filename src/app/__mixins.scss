@@ -1,0 +1,45 @@
+@mixin max920 {
+  @media (max-width: 920px) {
+    @content;
+  }
+}
+@mixin min920 {
+  @media (min-width: 920px) {
+    @content;
+  }
+}
+@mixin max767 {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin min767 {
+  @media (min-width: 767px) {
+    @content;
+  }
+}
+@mixin max424 {
+  @media (max-width: 424px) {
+    @content;
+  }
+}
+
+@mixin font-title($fz, $fw) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fz + px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+@mixin hover-primary {
+  transition: all 0.3s ease 0s;
+  &:hover,
+  &:focus {
+    transition: all 0.3s ease 0s;
+    color: #ffffff;
+    background: #5932ea;
+    border-radius: 8px;
+  }
+}
