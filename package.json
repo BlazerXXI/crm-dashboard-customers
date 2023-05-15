@@ -2,7 +2,9 @@
   "name": "crm-dashboard-customers",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://BlazerXXI.github.io/crm-dashboard-customers",
   "scripts": {
+    "deploy": "next build && npx gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -18,6 +20,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "sass": "^1.62.1"
   }
 }
