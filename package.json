@@ -2,7 +2,7 @@
   "name": "crm-dashboard-customers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://BlazerXXI.github.io/crm-dashboard-customers",
+  "homepage": "https://github.com/BlazerXXI/crm-dashboard-customers.git",
   "scripts": {
     "deploy": "next build && npx gh-pages -d out",
     "dev": "next dev",
