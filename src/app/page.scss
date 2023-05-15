@@ -15,8 +15,16 @@ html {
 @include max767 {
   .menu-open {
     span {
-      display: none;
-      background-color: red;
+      height: 0 !important;
+      &::after {
+        transform: rotate(45deg);
+        top: 0 !important;
+      }
+      &::before {
+        transform: rotate(-45deg);
+        bottom: 0 !important;
+        top: 0;
+      }
     }
     .page-aside {
       left: 0;
