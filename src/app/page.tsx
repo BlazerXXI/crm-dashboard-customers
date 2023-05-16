@@ -13,12 +13,8 @@ const page = () => {
   };
   return (
     <div className={`page container ${isMenuOpen ? "menu-open" : ""}`}>
-      <div className="page__menu menu">
-        <button
-          type="button"
-          onClick={toggleMenu}
-          className="menu__icon icon__menu"
-        >
+      <div onClick={toggleMenu} className="page__menu menu">
+        <button type="button" className="menu__icon icon__menu">
           <span></span>
         </button>
       </div>

@@ -86,6 +86,9 @@
 
 .side-menu {
   // .side-menu__user
+  nav {
+    height: 100%;
+  }
 
   &__user {
     display: flex;

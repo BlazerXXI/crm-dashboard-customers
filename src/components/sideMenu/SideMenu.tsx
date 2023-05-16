@@ -59,7 +59,13 @@ const SideMenu = () => {
         </ul>
       </nav>
       <Link className="side-menu__user side-user" href={"/user"}>
-        <Image className="side-user__image" src={avatar} alt="user" />
+        <Image
+          className="side-user__image"
+          src={avatar}
+          alt="user"
+          width={42}
+          height={42}
+        />
         <div className="side-user__name-block user-name-block">
           <h3 className="user-name-block__name">Evano</h3>
           <p className="user-name-block__role">Project Manager</p>
