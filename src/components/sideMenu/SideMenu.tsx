@@ -9,7 +9,11 @@ import icon5 from "@/img/aside/icons/discount-shape.svg";
 import icon6 from "@/img/aside/icons/message-question.svg";
 import avatar from "@/img/aside/avatar.jpg";
 
-const SideMenu = () => {
+type SideMenuProps = {
+  user: string | undefined;
+};
+
+const SideMenu = ({ user }: SideMenuProps) => {
   return (
     <div className="side-menu">
       <div className="side-menu__title side-title">
@@ -67,7 +71,7 @@ const SideMenu = () => {
           height={42}
         />
         <div className="side-user__name-block user-name-block">
-          <h3 className="user-name-block__name">Evano</h3>
+          <h3 className="user-name-block__name">{user}</h3>
           <p className="user-name-block__role">Project Manager</p>
         </div>
       </Link>

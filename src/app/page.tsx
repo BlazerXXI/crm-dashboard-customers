@@ -11,6 +11,9 @@ const page = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const user: string | undefined = "Evano";
+
   return (
     <div className={`page container ${isMenuOpen ? "menu-open" : ""}`}>
       <div onClick={toggleMenu} className="page__menu menu">
@@ -19,10 +22,10 @@ const page = () => {
         </button>
       </div>
       <aside className="page-aside">
-        <SideMenu />
+        <SideMenu user={user} />
       </aside>
       <main className="page-main main">
-        <p>Hello Evano 👋🏼,</p>
+        <p className="main-text__hello">Hello {user} 👋🏼,</p>
         <Pages />
       </main>
     </div>
