@@ -43,3 +43,18 @@
     border-radius: 8px;
   }
 }
+
+@mixin side-link__active {
+  transition: all 0.3s ease 0s;
+  color: #ffffff;
+  background: #5932ea;
+  border-radius: 8px;
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+@mixin side-link__active-transition {
+  filter: grayscale(1) brightness(1000%);
+  transition: all 0.3s ease 0s;
+}

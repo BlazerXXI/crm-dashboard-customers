@@ -29,15 +29,11 @@
     transition: all 0.3s ease 0s;
     padding: 0px 8px 0px 11px;
     @include hover-primary;
-    &:active {
-      opacity: 0.8;
-    }
     &:hover img,
     &:hover .side-item__link::after,
     &:focus .side-item__link::after,
     &:focus img {
-      transition: all 0.3s ease 0s;
-      filter: grayscale(1) brightness(1000%);
+      @include side-link__active-transition;
     }
   }
   // .side-menu__list
@@ -54,11 +50,25 @@
       align-items: center;
       display: flex;
 
-      &::after {
+      &:after {
         content: "";
         background: url("../../img/aside/icons/chevron-right.svg") 0 0 no-repeat;
         min-width: 16px;
         min-height: 16px;
+      }
+    }
+    .side-menu__home {
+      .side-item__link {
+        &::after {
+          content: none;
+        }
+      }
+    }
+    .side-link__active {
+      @include side-link__active;
+      & img,
+      .side-item__link::after {
+        @include side-link__active-transition;
       }
     }
   }
