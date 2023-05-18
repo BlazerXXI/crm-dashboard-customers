@@ -1,7 +1,13 @@
 import Image from "next/image";
 import "./Customers.scss";
+import SearchIconImage from "@/img/customers/searchIcon/search.svg";
+
 const Customers = () => {
-  const sizeSearchIcon = 24;
+  const searchIcon = {
+    sizeSearchIcon: 24,
+    imageSearchIcon: SearchIconImage,
+  };
+	console.log(searchIcon.imageSearchIcon);
   const data = [
     {
       customerName: "Jane Cooper",
@@ -79,9 +85,9 @@ const Customers = () => {
           <div>
             <Image
               alt="Search"
-              src="@/img/customers/searchIcon/search.svg"
-              width={sizeSearchIcon}
-              height={sizeSearchIcon}
+              src={searchIcon.imageSearchIcon}
+              width={searchIcon.sizeSearchIcon}
+              height={searchIcon.sizeSearchIcon}
             />
             <input type="text" placeholder="Search" />
           </div>
