@@ -19,10 +19,14 @@
 }
 .customers-menu {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
   .customers-search {
     background: #f9fbff;
   }
+}
+.customers__table-block {
+  margin: 40px 0px 0px 0px;
 }
 .customers-table {
 }

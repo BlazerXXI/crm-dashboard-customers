@@ -95,32 +95,32 @@ const Customers = () => {
             />
           </div>
         </div>
-      </div>
-      <div className="customers__table-block">
-        <table className="customers-table">
-          <thead className="customers-thead">
-            <tr>
-              <th>Customer Name</th>
-              <th>Company</th>
-              <th>Phone Number</th>
-              <th>Email</th>
-              <th>Country</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody className="customers-tbody">
-            {data.map((item, index) => (
-              <tr key={index}>
-                <td>{item.customerName}</td>
-                <td>{item.company}</td>
-                <td>{item.phoneNumber}</td>
-                <td>{item.email}</td>
-                <td>{item.country}</td>
-                <td>{item.status}</td>
+        <div className="customers__table-block">
+          <table className="customers-table">
+            <thead className="customers-thead">
+              <tr>
+                <th>Customer Name</th>
+                <th>Company</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="customers-tbody">
+              {data.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.customerName}</td>
+                  <td>{item.company}</td>
+                  <td>{item.phoneNumber}</td>
+                  <td>{item.email}</td>
+                  <td>{item.country}</td>
+                  <td>{item.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );
