@@ -42,9 +42,10 @@
     flex-direction: column;
     flex: 1 1 auto;
     gap: 40px;
+    width: 250px;
     .side-item__link {
       @include font-title(14, 500);
-      min-width: 250px;
+      width: 100%;
       min-height: 46px;
       justify-content: space-between;
       align-items: center;

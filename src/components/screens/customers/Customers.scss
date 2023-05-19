@@ -29,8 +29,20 @@
   margin: 40px 0px 0px 0px;
 }
 .customers-table {
+  border-collapse: collapse; /* Объединение границ ячеек */
+  width: 100%;
+  th,
+  tr {
+    border-bottom: 1px solid #eeeeee;
+  }
 }
 .customers-thead {
+  th {
+    @include font-title(14, 500);
+    padding-bottom: 14px;
+		text-align: left;
+    color: #b5b7c0;
+  }
 }
 .customers-tbody {
 }
