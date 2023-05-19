@@ -3,9 +3,9 @@ import "./Pages.scss";
 
 const Pages = () => {
   return (
-    <div>
+    <>
       <Customers />
-    </div>
+    </>
   );
 };
 

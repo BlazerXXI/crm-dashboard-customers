@@ -7,7 +7,6 @@ const Customers = () => {
     sizeSearchIcon: 24,
     imageSearchIcon: SearchIconImage,
   };
-	console.log(searchIcon.imageSearchIcon);
   const data = [
     {
       customerName: "Jane Cooper",
@@ -77,7 +76,7 @@ const Customers = () => {
   return (
     <section className="customers">
       <div className="customers__container">
-        <div>
+        <div className="customers-menu">
           <div>
             <h2>All Customers</h2>
             <p>Active Members</p>
@@ -89,13 +88,17 @@ const Customers = () => {
               width={searchIcon.sizeSearchIcon}
               height={searchIcon.sizeSearchIcon}
             />
-            <input type="text" placeholder="Search" />
+            <input
+              className="customers-search"
+              type="text"
+              placeholder="Search"
+            />
           </div>
         </div>
       </div>
-      <div>
-        <table>
-          <thead>
+      <div className="customers__table-block">
+        <table className="customers-table">
+          <thead className="customers-thead">
             <tr>
               <th>Customer Name</th>
               <th>Company</th>
@@ -105,7 +108,7 @@ const Customers = () => {
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="customers-tbody">
             {data.map((item, index) => (
               <tr key={index}>
                 <td>{item.customerName}</td>

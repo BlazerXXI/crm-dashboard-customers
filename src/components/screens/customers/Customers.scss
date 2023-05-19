@@ -1,2 +1,32 @@
 @import "@/app/__mixins.scss";
 @import "@/app/__variables.scss";
+
+.customers {
+  background: #ffffff;
+  box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+  border-radius: 30px;
+  margin: 51px 0px 0px 0px;
+  padding: 30px 40px 40px 38px;
+  // .customers__container
+
+  &__container {
+  }
+
+  // .customers__table-block
+
+  &__table-block {
+  }
+}
+.customers-menu {
+  display: flex;
+  align-items: flex-end;
+  .customers-search {
+    background: #f9fbff;
+  }
+}
+.customers-table {
+}
+.customers-thead {
+}
+.customers-tbody {
+}

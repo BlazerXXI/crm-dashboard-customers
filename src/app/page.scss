@@ -43,6 +43,8 @@ html {
 }
 .page-main {
   .main-text__hello {
+    @include font-title(24, 500);
+    color: #000000;
   }
 }
 .main {
