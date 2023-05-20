@@ -21,8 +21,45 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .customers-search-block {
+    position: relative;
+  }
+  .customers-search-button {
+    background: transparent;
+    position: absolute;
+    margin-top: -12px;
+    top: 50%;
+    left: 8px;
+  }
   .customers-search {
+    width: 216px;
+    @include font-title(12, 400);
     background: #f9fbff;
+    border-radius: 10px;
+    padding-left: 40px;
+    height: 38px;
+    &::placeholder {
+      color: #b5b7c0;
+    }
+  }
+  .customers-menu {
+    // .customers-menu__header
+
+    &__header {
+    }
+  }
+  .customers-header {
+    // .customers-header__title
+
+    &__title {
+    }
+
+    // .customers-header__sup-title
+
+    &__sup-title {
+      @include font-title(14, 400);
+      color: #16c098;
+    }
   }
 }
 .customers__table-block {
@@ -37,12 +74,33 @@
   }
 }
 .customers-thead {
-  th {
-    @include font-title(14, 500);
-    padding-bottom: 14px;
-		text-align: left;
-    color: #b5b7c0;
+  tr {
+    display: flex;
+    flex-direction: row;
+    th {
+      display: flex;
+      flex: 0 1 25%;
+      @include font-title(14, 500);
+      padding-bottom: 14px;
+      text-align: left;
+      color: #b5b7c0;
+    }
   }
 }
 .customers-tbody {
+  tr {
+    display: inline-flex;
+    width: 100%;
+    & > * {
+      flex: 0 1 25%;
+    }
+    &:first-child {
+      margin-top: 20px;
+    }
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
 }

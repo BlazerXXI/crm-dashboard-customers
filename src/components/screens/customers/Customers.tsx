@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./Customers.scss";
 import SearchIconImage from "@/img/customers/searchIcon/search.svg";
+import Link from "next/link";
 
 const Customers = () => {
   const searchIcon = {
@@ -77,17 +78,19 @@ const Customers = () => {
     <section className="customers">
       <div className="customers__container">
         <div className="customers-menu">
-          <div>
-            <h2>All Customers</h2>
-            <p>Active Members</p>
+          <div className="customers-menu__header customers-header">
+            <h2 className="customers-header__title">All Customers</h2>
+            <p className="customers-header__sup-title">Active Members</p>
           </div>
-          <div>
-            <Image
-              alt="Search"
-              src={searchIcon.imageSearchIcon}
-              width={searchIcon.sizeSearchIcon}
-              height={searchIcon.sizeSearchIcon}
-            />
+          <div className="customers-search-block">
+            <button className="customers-search-button">
+              <Image
+                alt="Search"
+                src={searchIcon.imageSearchIcon}
+                width={searchIcon.sizeSearchIcon}
+                height={searchIcon.sizeSearchIcon}
+              />
+            </button>
             <input
               className="customers-search"
               type="text"
