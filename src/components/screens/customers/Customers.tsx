@@ -1,14 +1,15 @@
 import Image from "next/image";
 import "./Customers.scss";
 import SearchIconImage from "@/img/customers/searchIcon/search.svg";
-import Link from "next/link";
+import React from "react";
 
 const Customers = () => {
   const searchIcon = {
     sizeSearchIcon: 24,
     imageSearchIcon: SearchIconImage,
   };
-  const data = [
+
+  const customers = [
     {
       customerName: "Jane Cooper",
       company: "Microsoft",
@@ -74,6 +75,13 @@ const Customers = () => {
       status: "Inactive",
     },
   ];
+
+  const [searchValue, setSearchValue] = React.useState("");
+
+  function customersSearchChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setSearchValue(event.target.value);
+  }
+
   return (
     <section className="customers">
       <div className="customers__container">
@@ -92,9 +100,11 @@ const Customers = () => {
               />
             </button>
             <input
+              id="customersSearch"
               className="customers-search"
               type="text"
               placeholder="Search"
+              onChange={customersSearchChange}
             />
           </div>
         </div>
@@ -111,16 +121,37 @@ const Customers = () => {
               </tr>
             </thead>
             <tbody className="customers-tbody">
-              {data.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.customerName}</td>
-                  <td>{item.company}</td>
-                  <td>{item.phoneNumber}</td>
-                  <td>{item.email}</td>
-                  <td>{item.country}</td>
-                  <td>{item.status}</td>
-                </tr>
-              ))}
+              {customers
+                .filter((item) =>
+                  Object.values(item).some(
+                    (value) =>
+                      value
+                        .toString()
+                        .toLowerCase()
+                        .indexOf(searchValue.toLowerCase()) !== -1
+                  )
+                )
+                .map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.customerName}</td>
+                    <td>{item.company}</td>
+                    <td>{item.phoneNumber}</td>
+                    <td>{item.email}</td>
+                    <td>{item.country}</td>
+                    <td
+                      id="status"
+                      className={
+                        item.status === "Active"
+                          ? "active"
+                          : item.status === "Inactive"
+                          ? "inactive"
+                          : ""
+                      }
+                    >
+                      <button> {item.status}</button>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

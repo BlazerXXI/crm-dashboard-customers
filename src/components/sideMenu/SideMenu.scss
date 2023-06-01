@@ -5,6 +5,7 @@
   padding-top: 37px;
   padding-bottom: 76px;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: 64px;
   height: 100%;
@@ -12,6 +13,7 @@
   &__title {
     display: flex;
     gap: 8px;
+    justify-content: center;
     &::before {
       content: "";
       background: url("../../img/aside/icons/title-logo.svg") 0 0 no-repeat;
@@ -42,7 +44,7 @@
     flex-direction: column;
     flex: 1 1 auto;
     gap: 40px;
-    width: 250px;
+    max-width: 250px;
     .side-item__link {
       @include font-title(14, 500);
       width: 100%;
@@ -99,6 +101,9 @@
   // .side-menu__user
   nav {
     height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   &__user {

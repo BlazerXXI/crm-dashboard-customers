@@ -3,16 +3,28 @@
 import Pages from "@/components/pages/Pages";
 import SideMenu from "@/components/sideMenu/SideMenu";
 import "./page.scss";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const page = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const user: string | undefined = "Evano";
+  const pageAsideRef = useRef<HTMLElement | null>(null);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const user: string | undefined = "Evano";
+  function handleClickOutside() {
+    if (pageAsideRef.current) {
+      setIsMenuOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  });
 
   return (
     <div className={`page container ${isMenuOpen ? "menu-open" : ""}`}>
@@ -21,7 +33,7 @@ const page = () => {
           <span></span>
         </button>
       </div>
-      <aside className="page-aside">
+      <aside ref={pageAsideRef} className="page-aside">
         <SideMenu user={user} />
       </aside>
       <main className="page-main main">

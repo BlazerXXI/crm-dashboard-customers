@@ -5,7 +5,16 @@ body,
 html {
   background: #fafbff;
   min-height: 100%;
+  font-size: 14px;
 }
+@media (max-width: 999px) {
+  * {
+    font-size: 0.8rem;
+  }
+}
+.page-aside {
+}
+
 .page {
   position: relative;
   display: flex;
@@ -13,13 +22,20 @@ html {
   min-height: 100%;
 }
 @include max767 {
+  .page {
+    justify-content: center;
+  }
+
   .menu-open {
+    transition: all 0.3s ease 0s;
     span {
       height: 0 !important;
       &::after {
+        transition: all 0.3s ease 0s;
         transform: rotate(45deg);
       }
       &::before {
+        transition: all 0.3s ease 0s;
         transform: rotate(-45deg);
         top: 5px !important;
       }
@@ -27,9 +43,30 @@ html {
     .page-aside {
       left: 0;
     }
+    .page__menu {
+      z-index: 100;
+      span::before,
+      span::after {
+        background-color: #ffffff;
+      }
+    }
+    &::before {
+      content: "";
+      z-index: 99;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 .page-aside {
+  display: flex;
+  justify-content: center;
+  max-width: 306px;
+  flex: 1 1 auto;
   background: #ffffff;
   padding: 0px 28px;
   min-height: 100%;
@@ -39,6 +76,10 @@ html {
     top: 0;
     left: -400px;
     position: absolute;
+    box-shadow: 1px 1px 13px 1px #5932ea;
+  }
+  @media (max-width: 1200px) {
+    padding: 0px 14px;
   }
 }
 .page-main {
@@ -48,8 +89,10 @@ html {
   }
 }
 .main {
-  padding-left: 71px;
-  padding-top: 41px;
+  padding: 41px 71px 0px 71px;
+  @media (max-width: 1200px) {
+    padding: 41px 14px 0px 14px;
+  }
 }
 
 .container {
@@ -65,8 +108,7 @@ html {
 
   &__menu {
     display: none;
-    z-index: 1000;
-    position: absolute;
+    position: fixed;
     top: 36px;
     right: 28px;
     min-width: 16px;

@@ -17,10 +17,7 @@ const SideMenu = ({ user }: SideMenuProps) => {
   return (
     <div className="side-menu">
       <div className="side-menu__title side-title">
-        <Link
-          className="side-title__link side-title-link"
-          href={"/crm-dashboard-customers/"}
-        >
+        <Link className="side-title__link side-title-link" href="./">
           <h2 className="side-title-link__title">Dashboard</h2>
           <p className="side-title-link__suptitle">v.01</p>
         </Link>
