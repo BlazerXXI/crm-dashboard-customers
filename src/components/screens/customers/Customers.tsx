@@ -82,6 +82,17 @@ const Customers = () => {
     setSearchValue(event.target.value);
   }
 
+  const handleButtonSearch = () => {
+    console.log("click");
+    const searchInput: HTMLElement | null =
+      document.querySelector<HTMLElement>("#customersSearch");
+    if (searchInput !== null) {
+      searchInput.style.display !== "block"
+        ? (searchInput.style.display = "block" || searchInput.focus())
+        : "";
+    }
+  };
+
   return (
     <section className="customers">
       <div className="customers__container">
@@ -91,7 +102,10 @@ const Customers = () => {
             <p className="customers-header__sup-title">Active Members</p>
           </div>
           <div className="customers-search-block">
-            <button className="customers-search-button">
+            <button
+              className="customers-search-button"
+              onClick={handleButtonSearch}
+            >
               <Image
                 alt="Search"
                 src={searchIcon.imageSearchIcon}
