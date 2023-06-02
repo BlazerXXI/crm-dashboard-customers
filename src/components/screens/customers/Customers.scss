@@ -9,6 +9,10 @@
   max-width: 968px;
   margin: 51px 0px 0px 0px;
   padding: 30px 40px 40px 38px;
+  @media (max-width: 480px) {
+    margin: 21px 0px 0px 0px;
+    padding: 20px 20px 20px 20px;
+  }
   // .customers__container
 
   &__container {
@@ -28,6 +32,10 @@
   }
   .customers-search-block {
     position: relative;
+    @media (max-width: 480px) {
+      width: 24px;
+      height: 24px;
+    }
   }
   .customers-search-button {
     background: transparent;
@@ -35,6 +43,9 @@
     margin-top: -12px;
     top: 50%;
     left: 8px;
+    @media (max-width: 480px) {
+      left: 0;
+    }
   }
   .customers-search {
     width: 216px;
@@ -45,6 +56,9 @@
     height: 38px;
     &::placeholder {
       color: #b5b7c0;
+    }
+    @media (max-width: 480px) {
+      display: none;
     }
   }
   .customers-menu {
@@ -159,21 +173,34 @@
 .customers-search {
 }
 .customers-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .customers-thead {
   position: relative;
   tr {
+    margin-top: 40px;
+    padding: 0px 0px 14px 0px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    @media (max-width: 769px) {
+      grid-gap: 2%;
+      margin-top: 20px;
+      padding: 0px 0px 7px 0px;
+    }
+    @media (max-width: 480px) {
+      grid-gap: 0.5%;
+    }
     > * {
       @include font-title(14, 500);
-      margin-bottom: 14px;
       color: #b5b7c0;
-
       text-align: left;
     }
     > *:not(:last-child) {
     }
     > *:last-child {
-      text-align: center;
+      margin-left: 12px;
     }
   }
   &::after {
@@ -181,13 +208,35 @@
     display: block;
     position: absolute;
     bottom: 0;
+    bottom: 0;
     left: -38px;
-    right: -40px;
     border-bottom: 1px solid #eeeeee;
     width: 120%;
   }
 }
 .customers-tbody {
+  tr {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 140px);
+    padding: 20px 0px 20px 0px;
+    @media (max-width: 769px) {
+      grid-template-columns: repeat(6, 1fr);
+      padding: 10px 0px 10px 0px;
+    }
+    @media (max-width: 480px) {
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      bottom: 0;
+      left: 0;
+      border-bottom: 1px solid #eeeeee;
+      width: 100%;
+    }
+  }
 }
 
 .active button {
