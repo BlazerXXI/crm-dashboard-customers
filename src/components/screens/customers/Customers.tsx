@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "./Customers.scss";
 import SearchIconImage from "@/img/customers/searchIcon/search.svg";
-import React from "react";
+import React, { useState } from "react";
 
 const Customers = () => {
   const searchIcon = {
@@ -77,6 +77,7 @@ const Customers = () => {
   ];
 
   const [searchValue, setSearchValue] = React.useState("");
+  const [searchVisible, setSearchVisible] = useState(false);
 
   function customersSearchChange(event: React.ChangeEvent<HTMLInputElement>) {
     setSearchValue(event.target.value);
@@ -88,7 +89,7 @@ const Customers = () => {
       document.querySelector<HTMLElement>("#customersSearch");
     if (searchInput !== null) {
       searchInput.style.display !== "block"
-        ? (searchInput.style.display = "block" || searchInput.focus())
+        ? (searchInput.style.display = "block")
         : "";
     }
   };

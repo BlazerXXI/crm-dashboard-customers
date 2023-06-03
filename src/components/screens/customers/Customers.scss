@@ -227,6 +227,7 @@
 
 .customers-tbody {
   tr {
+    gap: 5px;
     position: relative;
     padding: 20px 0px 20px 0px;
     @media (max-width: 769px) {

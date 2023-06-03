@@ -25,6 +25,9 @@ html {
   display: flex;
   justify-content: start;
   min-height: 100%;
+  @media (max-width: 480px) {
+    overflow: hidden;
+  }
 }
 @include max767 {
   .page {
@@ -90,12 +93,19 @@ html {
   .main-text__hello {
     @include font-title(24, 500);
     color: #000000;
+    @media (max-width: 480px) {
+      @include font-title(20, 500);
+      text-align: center;
+    }
   }
 }
 .main {
   padding: 41px 71px 0px 71px;
   @media (max-width: 1200px) {
     padding: 41px 14px 0px 14px;
+  }
+  @media (max-width: 769px) {
+    padding: 0;
   }
 }
 
