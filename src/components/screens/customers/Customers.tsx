@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./Customers.scss";
 import SearchIconImage from "@/img/customers/searchIcon/search.svg";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Customers = () => {
   const searchIcon = {
@@ -169,6 +170,37 @@ const Customers = () => {
                 ))}
             </tbody>
           </table>
+        </div>
+        <div className="customers-pagination">
+          <div className="customers-pagination__info">
+            Showing data 1 to 8 of 256K entries
+          </div>
+          <ul className="customers-pagination__numbers pagination-list">
+            <li className="pagination-list__item">
+              <Link href="#prev">{"<"}</Link>
+            </li>
+            <li className="pagination-list__item pagination-item__active">
+              <Link href="#1">1</Link>
+            </li>
+            <li className="pagination-list__item">
+              <Link href="#2">2</Link>
+            </li>
+            <li className="pagination-list__item">
+              <Link href="#3">3</Link>
+            </li>
+            <li className="pagination-list__item">
+              <Link href="#4">4</Link>
+            </li>
+            <li className="pagination-list__item">
+              <Link href="#...">...</Link>
+            </li>
+            <li className="pagination-list__item">
+              <Link href="#40">40</Link>
+            </li>
+            <li className="pagination-list__item">
+              <Link href="#next">{">"}</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
