@@ -91,7 +91,7 @@ const Customers = () => {
     if (searchInput !== null) {
       searchInput.style.display !== "block"
         ? (searchInput.style.display = "block")
-        : searchInput.style.display = "none";
+        :  "";
     }
   };
 
